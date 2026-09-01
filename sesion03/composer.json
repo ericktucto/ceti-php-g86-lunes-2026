@@ -1,0 +1,20 @@
+{
+    "name": "tienda/backend",
+    "description": "Backend de tienda virtual",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tienda\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erick Tucto",
+            "email": "erick@ericktucto.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^8.1"
+    }
+}
