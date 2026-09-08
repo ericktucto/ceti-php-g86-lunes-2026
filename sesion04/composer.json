@@ -1,0 +1,23 @@
+{
+    "name": "ericktucto/tienda-crud",
+    "description": "CRUD de productos con PDO y PSR-4, sin framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erick Tucto",
+            "email": "erick@ericktucto.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tienda\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^8.1"
+    }
+}
