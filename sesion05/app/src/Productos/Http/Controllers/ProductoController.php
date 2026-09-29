@@ -32,4 +32,27 @@ class ProductoController
 
         return new Response(201, ['Content-Type' => 'application/json'], json_encode($product->toArray()));
     }
+
+    public function delete(ServerRequestInterface $request, array $args): ResponseInterface
+    {
+        $id = (int) ($args['id'] ?? null);
+        if ($id === 0) {
+            return new Response(404, ["Content-Type" => "application/json"], json_encode([
+                'errors' => ['Recurso no encontrado']
+            ]));
+        }
+
+        $producto = Product::query()->find($id);
+        if (!$producto) {
+            return new Response(404, ["Content-Type" => "application/json"], json_encode([
+                'errors' => ['Recurso no encontrado']
+            ]));
+        }
+
+        $producto->delete();
+
+        return new Response(200, ["Content-Type" => "application/json"], json_encode([
+                'message' => 'Producto eliminado'
+            ]));
+    }
 }

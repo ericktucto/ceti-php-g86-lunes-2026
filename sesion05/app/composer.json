@@ -19,7 +19,8 @@
         "league/route": "^7.0",
         "yiisoft/psr-emitter": "^1.0",
         "illuminate/database": "^13.31",
-        "symfony/dotenv": "^8.1"
+        "symfony/dotenv": "^8.1",
+        "firebase/php-jwt": "^7.2"
     },
     "require-dev": {
         "symfony/var-dumper": "^8.1"

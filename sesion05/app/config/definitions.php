@@ -2,8 +2,10 @@
 
 use App\Core\Definitions\ClaseDefinition;
 use App\Core\Definitions\ConnectionDefinition;
+use App\Core\Definitions\JWTDefinition;
 use App\Core\Definitions\RouterDefinition;
 use App\EjemploInterface;
+use App\Services\Contracts\JWTInterface;
 use GuzzleHttp\Psr7\ServerRequest;
 use Illuminate\Database\ConnectionResolverInterface;
 
@@ -14,6 +16,7 @@ return [
     'request' => fn() => ServerRequest::fromGlobals(),
     'router' => factory([RouterDefinition::class, 'create']),
     ConnectionResolverInterface::class => factory([ConnectionDefinition ::class, 'create']),
+    JWTInterface::class => factory([JWTDefinition::class, 'create']),
     'config_database' => [
         'default' => 'pg',
         'pg' => [
